@@ -21,12 +21,12 @@ START_TIME = time.time()
 # Ask Doubt on telegram @KingVJ01
 
 main_buttons = [[
-    InlineKeyboardButton('❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ❣️', url='https://t.me/kingvj01')
+    InlineKeyboardButton('❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ❣️', url='https://t.me/KeralaLeech')
 ],[
-    InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-    InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
+    InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/KeralaLeech'),
+    InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/KeralaLeech')
 ],[
-    InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
+    InlineKeyboardButton('💝 ᴍʏ ᴄʜᴀɴɴᴇʟ', url='https://t.me/KeralaLeech')
 ],[
     InlineKeyboardButton('👨‍💻 ʜᴇʟᴘ', callback_data='help'),
     InlineKeyboardButton('💁 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -35,7 +35,7 @@ main_buttons = [[
 ]]
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot 
 # Ask Doubt on telegram @KingVJ01
 
 @Client.on_message(filters.private & filters.command(['start']))
@@ -73,7 +73,7 @@ async def helpcb(bot, query):
         InlineKeyboardButton('Aʙᴏᴜᴛ ✨️', callback_data='about'),
         InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='settings#main')
     ],[
-        InlineKeyboardButton('• back', callback_data='back')
+        InlineKeyboardButton('back', callback_data='back')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(text=Script.HELP_TXT, reply_markup=reply_markup)
@@ -110,7 +110,7 @@ async def back(bot, query):
 @Client.on_callback_query(filters.regex(r'^about'))
 async def about(bot, query):
     buttons = [[
-         InlineKeyboardButton('• back', callback_data='help'),
+         InlineKeyboardButton('back', callback_data='help'),
          InlineKeyboardButton('Stats ✨️', callback_data='status')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -130,7 +130,7 @@ async def status(bot, query):
     forwardings = await db.forwad_count()
     upt = await get_bot_uptime(START_TIME)
     buttons = [[
-        InlineKeyboardButton('• back', callback_data='help'),
+        InlineKeyboardButton('back', callback_data='help'),
         InlineKeyboardButton('System Stats ✨️', callback_data='systm_sts'),
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
